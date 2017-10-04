@@ -1,0 +1,2 @@
+This is an under development Android Application which is used to inform the user the amount of water her needs to intake in a day dividing the total amount of water into equal poropertions during the whole duration  they will be awake during a day.
+It uses the Android notification and Broadcast Receiver and Service to perform the above mentioned.
