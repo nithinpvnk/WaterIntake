@@ -1,23 +1,18 @@
 package com.nithinkumar.water.Fragment;
 
-import android.graphics.Color;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v4.app.Fragment;
+import androidx.annotation.Nullable;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.snackbar.Snackbar;
+import androidx.fragment.app.Fragment;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.jorgecastillo.FillableLoader;
-import com.github.jorgecastillo.FillableLoaderBuilder;
-import com.github.jorgecastillo.clippingtransforms.WavesClippingTransform;
 import com.github.jorgecastillo.listener.OnStateChangeListener;
 
 import com.nithinkumar.water.Paths;
@@ -25,7 +20,6 @@ import com.nithinkumar.water.R;
 import com.nithinkumar.water.WaterShared;
 
 import static com.github.jorgecastillo.library.R.dimen.strokeWidth;
-import static com.nithinkumar.water.R.id.fillableLoader;
 
 public class HomeFragment extends Fragment implements AddWaterDialogFragment.OnFragmentInteractionListener, OnStateChangeListener {
     private static final String ARG_LAYOUT_NUMBER = "Layout Number";
