@@ -1,4 +1,4 @@
-package com.nithinkumar.water.Fragment;
+package com.nithinkumar.water.fragment;
 
 import android.os.Bundle;
 import androidx.annotation.Nullable;
@@ -18,8 +18,6 @@ import com.github.jorgecastillo.listener.OnStateChangeListener;
 import com.nithinkumar.water.Paths;
 import com.nithinkumar.water.R;
 import com.nithinkumar.water.WaterShared;
-
-import static com.github.jorgecastillo.library.R.dimen.strokeWidth;
 
 public class HomeFragment extends Fragment implements AddWaterDialogFragment.OnFragmentInteractionListener, OnStateChangeListener {
     private static final String ARG_LAYOUT_NUMBER = "Layout Number";

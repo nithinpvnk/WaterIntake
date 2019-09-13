@@ -9,12 +9,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.nithinkumar.water.Fragment.DetailsDialogFragment;
-import com.nithinkumar.water.Fragment.HistoryFragment;
-import com.nithinkumar.water.Fragment.HomeFragment;
+import com.nithinkumar.water.fragment.DetailsDialogFragment;
+import com.nithinkumar.water.fragment.HistoryFragment;
+import com.nithinkumar.water.fragment.HomeFragment;
 import com.nithinkumar.water.R;
-import com.nithinkumar.water.Fragment.SettingsFragment;
+import com.nithinkumar.water.fragment.SettingsFragment;
 import com.nithinkumar.water.WaterShared;
+import com.nithinkumar.water.fragment.WaterIntakeFragment;
 
 public class WaterActivity extends AppCompatActivity {
 
@@ -57,7 +58,7 @@ public class WaterActivity extends AppCompatActivity {
                     return true;
                 case R.id.navigation_dashboard:
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.content, HistoryFragment.newInstance(R.layout.fragment_history),"2");
+                    fragmentTransaction.replace(R.id.content, WaterIntakeFragment.newInstance(),"2");
                     fragmentTransaction.commit();
                     return true;
                 case R.id.navigation_notifications:

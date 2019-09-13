@@ -1,4 +1,4 @@
-package com.nithinkumar.water.Fragment;
+package com.nithinkumar.water.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
