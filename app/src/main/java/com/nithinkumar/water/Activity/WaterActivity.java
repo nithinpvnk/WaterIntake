@@ -1,20 +1,20 @@
 package com.nithinkumar.water.Activity;
 
-import androidx.annotation.NonNull;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
-import com.nithinkumar.water.fragment.DetailsDialogFragment;
-import com.nithinkumar.water.fragment.HistoryFragment;
-import com.nithinkumar.water.fragment.HomeFragment;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationManagerCompat;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.nithinkumar.water.R;
-import com.nithinkumar.water.fragment.SettingsFragment;
 import com.nithinkumar.water.WaterShared;
+import com.nithinkumar.water.fragment.DetailsDialogFragment;
+import com.nithinkumar.water.fragment.HomeFragment;
+import com.nithinkumar.water.fragment.SettingsFragment;
 import com.nithinkumar.water.fragment.WaterIntakeFragment;
 
 public class WaterActivity extends AppCompatActivity {
@@ -28,7 +28,8 @@ public class WaterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_water);
         mWaterShared = new WaterShared(this);
-        BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+
+        BottomNavigationView navigation = findViewById(R.id.navigation);
         fragmentManager = getSupportFragmentManager();
         if(mWaterShared.getFirstRun_app().equals(""))
         {

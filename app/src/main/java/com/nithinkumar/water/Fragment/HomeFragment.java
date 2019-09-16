@@ -17,6 +17,7 @@ import com.github.jorgecastillo.listener.OnStateChangeListener;
 
 import com.nithinkumar.water.Paths;
 import com.nithinkumar.water.R;
+import com.nithinkumar.water.WaterIntakeNotificationChannel;
 import com.nithinkumar.water.WaterShared;
 
 public class HomeFragment extends Fragment implements AddWaterDialogFragment.OnFragmentInteractionListener, OnStateChangeListener {

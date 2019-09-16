@@ -14,7 +14,7 @@ import kotlinx.android.synthetic.main.fragment_water_intake.view.*
 /**
  * A simple [Fragment] subclass.
  * Activities that contain this fragment must implement the
-  * Use the [WaterIntakeFragment.newInstance] factory method to
+ * Use the [WaterIntakeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
 class WaterIntakeFragment : Fragment() {
@@ -81,7 +81,8 @@ class WaterIntakeFragment : Fragment() {
         fun newInstance() = WaterIntakeFragment()
     }
 }
+
 data class Item(
         val title: String,
-         val icon: String
+        val icon: String
 )
