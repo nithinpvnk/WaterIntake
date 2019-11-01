@@ -55,11 +55,11 @@ public class HomeFragment extends Fragment implements AddWaterDialogFragment.OnF
         currentValue = (TextView) hmv.findViewById(R.id.current_water_value);
         mFillableLoader = (FillableLoader) hmv.findViewById(R.id.homeLoader);
 
-        int tv = (mShared.getWeight_userValue() * 40);
+        int tv = (mShared.getWeight() * 40);
 
         targetValue.setText(String.valueOf(tv));
 
-        currentValue.setText(String.valueOf(mShared.getWaterCurrentValue_daily()));
+        currentValue.setText(String.valueOf(mShared.getWaterAddedCurrent()));
 
 
 //        int viewSize = getResources().getDimensionPixelSize(R.dimen.fourthSampleViewSize);
@@ -102,9 +102,9 @@ public class HomeFragment extends Fragment implements AddWaterDialogFragment.OnF
     @Override
     public void onWaterTakenFragmentInteraction(int wac) {
         Toast.makeText(getContext(), "Another Glass Drank!", Toast.LENGTH_LONG).show();
-        mShared.setWaterAdded_current(wac);
-        int val = mShared.getWaterAdded_current() + mShared.getWaterCurrentValue_daily();
-        mShared.setWaterCurrentValue_daily(val);
+        mShared.setWaterAddedCurrent(wac);
+        int val = mShared.getWaterAddedCurrent() + mShared.getWaterAddedDaily();
+        mShared.setWaterAddedDaily(val);
         currentValue.setText(String.valueOf(val));
 
     }

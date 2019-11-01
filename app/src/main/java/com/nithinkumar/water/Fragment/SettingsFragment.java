@@ -98,11 +98,11 @@ public class SettingsFragment extends Fragment implements DetailsDialogFragment.
 
 
     public void update() {
-        userName.setText(mWaterShared.getName_userValue());
-        userHeight.setText(String.valueOf(mWaterShared.getHeight_userValue()));
-        userWeight.setText(String.valueOf(mWaterShared.getWeight_userValue()));
-        startTime.setText(mWaterShared.getStartTime_userValue());
-        endTime.setText(mWaterShared.getEndTime_userValue());
+        userName.setText(mWaterShared.getName());
+        userHeight.setText(String.valueOf(mWaterShared.getHeight()));
+        userWeight.setText(String.valueOf(mWaterShared.getWeight()));
+        startTime.setText(mWaterShared.getStartTime());
+        endTime.setText(mWaterShared.getEndTime());
     }
 
     public void rateUs() {
@@ -126,7 +126,7 @@ public class SettingsFragment extends Fragment implements DetailsDialogFragment.
             Intent i = new Intent(Intent.ACTION_SEND);
             i.setType("text/plain");
             i.putExtra(Intent.EXTRA_SUBJECT, "Keep Track of your Hydration");
-            String name = mWaterShared.getName_userValue();
+            String name = mWaterShared.getName();
             String sAux = "\n" + name + "wants to help you know your Water input with the help of this application.\n\n";
             sAux = sAux + "https://play.google.com/store/apps/details?id=com.nithinkumar.water \n\n";
             i.putExtra(Intent.EXTRA_TEXT, sAux);
