@@ -127,10 +127,10 @@ public class DetailsDialogFragment extends DialogFragment {
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
                         valuesSetting();
-                        if (mWaterVals.getFirstRun_app().equals("Done")) {
+                        if (mWaterVals.getFirstRun().equals("Done")) {
                             mListener.onFragmentInteraction(getTargetFragment());
                         } else {
-                            mWaterVals.setFirstRun_app("Done");
+                            mWaterVals.setFirstRun("Done");
                         }
                     }
                 })
@@ -148,24 +148,24 @@ public class DetailsDialogFragment extends DialogFragment {
         if (userName.getText().toString().equals(null)) {
             Toast.makeText(getContext(), "Please Enter UserName", Toast.LENGTH_LONG).show();
         } else {
-            mWaterVals.setName_userValue(userName.getText().toString());
+            mWaterVals.setName(userName.getText().toString());
         }
 
         if (userHeight.getText().toString().equals(null)) {
             Toast.makeText(getContext(), "Please Enter UserHeight", Toast.LENGTH_LONG).show();
         } else {
-            mWaterVals.setHeight_userValue(Integer.valueOf(userHeight.getText().toString()));
+            mWaterVals.setHeight(Integer.valueOf(userHeight.getText().toString()));
         }
 
         if (userWeight.getText().toString().equals(null)) {
             Toast.makeText(getContext(), "Please Enter UserWeight", Toast.LENGTH_LONG).show();
         } else {
-            mWaterVals.setWeight_userValue(Integer.valueOf(userWeight.getText().toString()));
+            mWaterVals.setWeight(Integer.valueOf(userWeight.getText().toString()));
         }
 
 
-        mWaterVals.setStartTime_userValue((startTime.getText().toString()));
-        mWaterVals.setEndTime_userValue((endTime.getText().toString()));
+        mWaterVals.setStartTime((startTime.getText().toString()));
+        mWaterVals.setEndTime((endTime.getText().toString()));
     }
 
     public interface OnFragmentInteractionListener {
