@@ -8,7 +8,7 @@ import android.content.Intent
 import android.os.Build
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
-import com.nithinkumar.water.Activity.WaterActivity
+import com.nithinkumar.water.activity.WaterActivity
 
 class WaterIntakeNotificationChannel {
 

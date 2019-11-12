@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Water</string>
+    <string name="app_name">Water Reminder</string>
 
     <string name="title_home">Home</string>
     <string name="title_dashboard">History</string>
@@ -20,10 +20,10 @@
     <string name="Rate_us">Rate Us!</string>
     <string name="share">Share with</string>
     <string name="Clear_data">Clear Data</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="waterIntakeLabel">Water Intake</string>
-    <string name="UserwaterValueDefault">0000</string>
+    <string name="UserwaterValueDefault">1000</string>
     <string name="by">/</string>
     <string name="waterMetric">ml</string>
     <string name="add">Add :</string>

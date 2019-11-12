@@ -73,21 +73,15 @@
             android:layout_alignParentBottom="true"
             android:layout_centerInParent="true"
             android:layout_margin="16dp"
-            android:src="@drawable/ic_cup_water_white_48dp">
-
-        </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
-        <com.github.jorgecastillo.FillableLoader
-            android:id="@+id/homeLoader"
-            android:layout_below="@id/water_value"
-            android:layout_width="211dp"
-            android:layout_height="300dp"
-            app:fl_fillColor="#EF5350"
-            app:fl_originalWidth="2114"
-            app:fl_originalHeight="3000"
-            app:fl_clippingTransform="spikes"
-            app:fl_fillDuration="5000"
-            android:layout_gravity="center"            />
+            android:src="@drawable/ic_cup_water_white_48dp"/>
 
     </RelativeLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        app:menu="@menu/navigation"/>
 </FrameLayout>
