@@ -31,6 +31,10 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="water_intake_value">Water Intake Value</string>
     <string name="water_intake_background">Water Intake Background</string>
+    <string name="initial_helper_text">Let\'s Start Getting hydrated   Click and Add water you have consumed</string>
+    <string name="percent_completed_title">% Completed</string>
+    <string name="quantity_consumed_title">Quantity Consumed</string>
+    <string name="date_title">Date :</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string-array name="waterValues_array">

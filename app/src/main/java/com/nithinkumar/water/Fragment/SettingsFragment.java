@@ -4,22 +4,20 @@ import android.content.ActivityNotFoundException;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.cardview.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+
 import com.nithinkumar.water.R;
 import com.nithinkumar.water.WaterShared;
 
 
 public class SettingsFragment extends Fragment implements DetailsDialogFragment.OnFragmentInteractionListener {
-
-    private static final String ARG_LAYOUT_NUMBER = "Layout Number";
 
     ImageView editVals;
     TextView userName;
@@ -38,12 +36,8 @@ public class SettingsFragment extends Fragment implements DetailsDialogFragment.
         // Required empty public constructor
     }
 
-    public static SettingsFragment newInstance(int layout) {
-        SettingsFragment fragment = new SettingsFragment();
-        Bundle args = new Bundle();
-        args.putInt(ARG_LAYOUT_NUMBER, layout);
-        fragment.setArguments(args);
-        return fragment;
+    public static SettingsFragment newInstance() {
+        return new SettingsFragment();
     }
 
     @Override
@@ -58,15 +52,15 @@ public class SettingsFragment extends Fragment implements DetailsDialogFragment.
         //Shared Preference
         mWaterShared = new WaterShared(getContext());
         //Assigning the xml values
-        editVals = (ImageView) sv.findViewById(R.id.edit_value);
-        userName = (TextView) sv.findViewById(R.id.name_value);
-        userHeight = (TextView) sv.findViewById(R.id.height_value);
-        userWeight = (TextView) sv.findViewById(R.id.weight_value);
-        startTime = (TextView) sv.findViewById(R.id.start_value);
-        endTime = (TextView) sv.findViewById(R.id.end_value);
+        editVals = sv.findViewById(R.id.edit_value);
+        userName = sv.findViewById(R.id.name_value);
+        userHeight = sv.findViewById(R.id.height_value);
+        userWeight = sv.findViewById(R.id.weight_value);
+        startTime = sv.findViewById(R.id.start_value);
+        endTime = sv.findViewById(R.id.end_value);
 
-        rateus = (CardView) sv.findViewById(R.id.rate_us);
-        shareWith = (CardView) sv.findViewById(R.id.share_with);
+        rateus = sv.findViewById(R.id.rate_us);
+        shareWith = sv.findViewById(R.id.share_with);
 
         rateus.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -144,8 +138,7 @@ public class SettingsFragment extends Fragment implements DetailsDialogFragment.
 
     @Override
     public void onFragmentInteraction(Fragment frag) {
-        if(frag.equals(getFragmentManager().findFragmentByTag("3")))
-        {
+        if (frag.equals(getFragmentManager().findFragmentByTag("3"))) {
             update();
         }
 

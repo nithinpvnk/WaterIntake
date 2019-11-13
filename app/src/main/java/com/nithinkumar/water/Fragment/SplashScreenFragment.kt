@@ -13,13 +13,13 @@ import kotlinx.android.synthetic.main.fragment_splash_screen.view.*
 
 class SplashScreenFragment : Fragment() {
 
-    private var fragmentListener: OnFragmentInteractionListener? = null
+    private var fragmentListener: OnSplashScreenFragmentInteractionListener? = null
 
     override fun onCreateView(inflater: LayoutInflater,
                               container: ViewGroup?,
                               savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_splash_screen, container,false)
+        val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
 //        WaterIntakeNotificationChannel().createNotificationChannel(this,
 //                NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
@@ -50,10 +50,10 @@ class SplashScreenFragment : Fragment() {
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
-        if (context is OnFragmentInteractionListener) {
+        if (context is OnSplashScreenFragmentInteractionListener) {
             fragmentListener = context
         } else {
-            throw RuntimeException("$context must implement OnFragmentInteractionListener")
+            throw RuntimeException("$context must implement OnSplashScreenFragmentInteractionListener")
         }
     }
 
@@ -62,7 +62,7 @@ class SplashScreenFragment : Fragment() {
         fragmentListener = null
     }
 
-    interface OnFragmentInteractionListener {
+    interface OnSplashScreenFragmentInteractionListener {
         fun redirectToHomeScreen()
     }
 
