@@ -1,7 +1,7 @@
 package com.nithinkumar.water.activity
 
+import android.app.ProgressDialog.show
 import android.os.Bundle
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.FragmentManager
 import com.nithinkumar.water.R
@@ -10,7 +10,8 @@ import com.nithinkumar.water.fragment.*
 
 class WaterActivity : AppCompatActivity(),
         SplashScreenFragment.OnSplashScreenFragmentInteractionListener,
-        WaterFragment.OnWaterScreenFragmentInteractionListener {
+        WaterFragment.OnWaterScreenFragmentInteractionListener,
+        HomeFragment.OnHomeScreenFragmentInteractionListener {
 
     private val fragmentManager: FragmentManager = supportFragmentManager
     private lateinit var mWaterShared: WaterShared
@@ -63,13 +64,15 @@ class WaterActivity : AppCompatActivity(),
 
     override fun onSettingsClicked() {
         fragmentManager.beginTransaction().apply {
-            replace(R.id.pageContainer, SettingsFragment.newInstance(), "4")
+            replace(R.id.pageContainer, SettingsFragment.newInstance(), "5")
             commit()
         }
     }
 
-    override fun onFABClicked(pageContainer: FrameLayout) {
-
+    override fun onFABClicked() {
+        WaterIntakeFragment().let { addWater ->
+            addWater.setTargetFragment(fragmentManager.findFragmentByTag("2"), 280)
+            fragmentManager.let { addWater.show(it, "Quantity Consumed") }
+        }
     }
-
 }

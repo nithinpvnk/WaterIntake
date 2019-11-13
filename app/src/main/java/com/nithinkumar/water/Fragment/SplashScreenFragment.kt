@@ -21,10 +21,6 @@ class SplashScreenFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_splash_screen, container, false)
 
-//        WaterIntakeNotificationChannel().createNotificationChannel(this,
-//                NotificationManagerCompat.IMPORTANCE_DEFAULT, false,
-//                getString(R.string.app_name), "Water Local Notification channel.")
-
         view.splash_logo_fragment.addAnimatorListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
                 Toast.makeText(context, "ANIMATION REPEAT", Toast.LENGTH_LONG).show()
@@ -33,7 +29,6 @@ class SplashScreenFragment : Fragment() {
             override fun onAnimationEnd(animation: Animator?) {
                 Toast.makeText(context, "ANIMATION DONE", Toast.LENGTH_LONG).show()
                 fragmentListener?.redirectToHomeScreen()
-//              WaterIntakeNotificationChannel().createNotification(this@SplashScreen)
             }
 
             override fun onAnimationCancel(animation: Animator?) {

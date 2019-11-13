@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.fragment.app.Fragment
 import com.nithinkumar.water.R
 import com.nithinkumar.water.WaterShared
@@ -17,28 +16,28 @@ class WaterFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        val homeFragmentView = inflater.inflate(R.layout.fragment_home, container, false)
+        val waterFragmentView = inflater.inflate(R.layout.fragment_home, container, false)
         mShared = WaterShared(context)
         fragmentListener?.onDefaultLoad()
 
-        homeFragmentView.navigation.setOnNavigationItemSelectedListener {
+        waterFragmentView.navigation.setOnNavigationItemSelectedListener {
             when (it.itemId) {
                 R.id.navigation_home -> {
                     fragmentListener?.onHomeClicked()
                     true
                 }
-                R.id.navigation_dashboard -> {
+                R.id.history -> {
                     fragmentListener?.onHistoryClicked()
                     true
                 }
-                R.id.navigation_notifications -> {
+                R.id.settings -> {
                     fragmentListener?.onSettingsClicked()
                     true
                 }
                 else -> false
             }
         }
-        return homeFragmentView
+        return waterFragmentView
     }
 
     override fun onAttach(context: Context) {
@@ -55,18 +54,15 @@ class WaterFragment : Fragment() {
         fragmentListener = null
     }
 
-
     interface OnWaterScreenFragmentInteractionListener {
         fun onDefaultLoad()
         fun onHomeClicked()
         fun onHistoryClicked()
         fun onSettingsClicked()
-        fun onFABClicked(pageContainer: FrameLayout)
     }
 
     companion object {
         fun newInstance() = WaterFragment()
     }
-
 }
 
