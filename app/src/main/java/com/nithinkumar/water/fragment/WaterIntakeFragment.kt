@@ -1,10 +1,12 @@
 package com.nithinkumar.water.fragment
 
+import android.content.ClipData
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.Fragment
 import com.nithinkumar.water.ItemAdapter
 import com.nithinkumar.water.R
@@ -17,7 +19,7 @@ import kotlinx.android.synthetic.main.fragment_water_intake.view.*
  * Use the [WaterIntakeFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class WaterIntakeFragment : Fragment() {
+class WaterIntakeFragment : DialogFragment() {
 
     private val itemAdapter by lazy {
         ItemAdapter { position: Int, _: Item ->
@@ -37,7 +39,7 @@ class WaterIntakeFragment : Fragment() {
         return view
     }
 
-    private val possibleItems = listOf(
+    private val possibleItems:List<Item> = listOf(
             Item("Airplanes", "first.json"),
             Item("Cars", "second.json"),
             Item("Food", "third.json"),
@@ -50,33 +52,15 @@ class WaterIntakeFragment : Fragment() {
 
 //    override fun onAttach(context: Context) {
 //        super.onAttach(context)
-//        if (context is OnFragmentInteractionListener) {
+//        if (context is OnSplashScreenFragmentInteractionListener) {
 //            listener = context
 //        } else {
-//            throw RuntimeException(context.toString() + " must implement OnFragmentInteractionListener")
+//            throw RuntimeException(context.toString() + " must implement OnSplashScreenFragmentInteractionListener")
 //        }
 //    }
 
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
 
     companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @return A new instance of fragment WaterIntakeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance() = WaterIntakeFragment()
     }

@@ -33,17 +33,17 @@ public class AddWaterDialogFragment extends DialogFragment implements AdapterVie
     public AddWaterDialogFragment() {
     }
 
-    @Override
-    public void onAttach(Context context) {
-        super.onAttach(context);
-        try {
-            mListener = (OnFragmentInteractionListener) getTargetFragment();
-        } catch (ClassCastException e) {
-            // The activity doesn't implement the interface, throw exception
-            throw new ClassCastException(context.toString()
-                    + " must implement NoticeDialogListener");
-        }
-    }
+//    @Override
+//    public void onAttach(Context context) {
+//        super.onAttach(context);
+//        try {
+//            mListener = (OnFragmentInteractionListener) getTargetFragment();
+//        } catch (ClassCastException e) {
+//            // The activity doesn't implement the interface, throw exception
+//            throw new ClassCastException(context.toString()
+//                    + " must implement NoticeDialogListener");
+//        }
+//    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
@@ -55,7 +55,7 @@ public class AddWaterDialogFragment extends DialogFragment implements AdapterVie
 
         View awv = inflater.inflate(R.layout.fragment_water_add_dialog, null);
 
-        mListener = (OnFragmentInteractionListener) getTargetFragment();
+       // mListener = (OnFragmentInteractionListener) getTargetFragment();
         addWaterValue = (AutoCompleteTextView) awv.findViewById(R.id.added_water_value);
 
         String[] dataList = getResources().getStringArray(R.array.waterValues_array);
@@ -75,7 +75,7 @@ public class AddWaterDialogFragment extends DialogFragment implements AdapterVie
                     @Override
                     public void onClick(DialogInterface dialog, int id) {
 
-                        mListener.onWaterTakenFragmentInteraction(waterAdded_current);
+                       // mListener.onWaterTakenFragmentInteraction(waterAdded_current);
 
                     }
                 })

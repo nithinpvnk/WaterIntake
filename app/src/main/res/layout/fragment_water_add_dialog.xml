@@ -25,9 +25,9 @@
 
         <AutoCompleteTextView
             android:id="@+id/added_water_value"
-            android:layout_width="wrap_content"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
-            android:layout_margin="2dp"
+            android:layout_margin="8dp"
             android:hint="@string/UserwaterValueDefault"
             android:padding="8dp"
             android:textSize="21sp"/>
